@@ -24,7 +24,7 @@ year = [
 
 
 month = int(input('Введите номер месяца: '))
-if 0 <= month <= 12:
+if 0 < month <= 12:
     print('Вы ввели', year[month - 1])
 else:
     print('Такого месяца нет!')
