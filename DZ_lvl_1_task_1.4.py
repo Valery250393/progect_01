@@ -30,10 +30,13 @@ store = {
 
 # Пример: "Кроссовки тип 3 (Adidas) - 31 шт, стоимость 50747 руб"
 
-pprint(dir(titles))
+for item in titles:
+    item_name = item
+    item_code = titles[item]
+    item_quantity = 0
+    item_price = 0
+    for i in store[item_code]:
+        item_quantity = i['quantity']
+        item_price = i['price'] * item_quantity
+        print(item_name, "- кол-во", item_quantity, "шт. Стоимость", item_price, "руб.")
 
-for i in  store:
-    print(i)
-    num = titles.[i]
-
-print(titles[num][1], ' - ', store[num2][1], 'шт,', 'стоимость', prices, 'руб')
