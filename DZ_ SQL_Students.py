@@ -67,23 +67,22 @@ def get_school_name(school_id):
     except (Exception, sqlite3.Error) as error:
         print('Ошибка в получении данных', error)
 
-def get_students(school_id):
+def get_students(student_id):
     try:
-        school_name = get_school_name(school_id)
         connection = get_connection()
         cursor = connection.cursor()
-        sql_select_query = '''SELECT * FROM Students WHERE School_ID = ?'''
-        cursor.execute(sql_select_query, (school_id,))
+        sql_select_query = '''SELECT * FROM Students WHERE Student_ID = ?'''
+        cursor.execute(sql_select_query, (student_id,))
         records = cursor.fetchall()
-        print('\nСтуденты из школы', school_name)
+        print('\nДанные по студенту')
         for row in records:
             print('ID Студента:', row[0])
             print('Имя Студента:', row[1])
             print('ID Школы:', row[2])
-            print('Название Школы:', school_name, '\n')
+            print('Название Школы:', get_school_name(row[2]), '\n')
         close_connection(connection)
     except (Exception, sqlite3.Error) as error:
          print('Ошибка в получении данных', error)
 
 print('\nДомашняя работа. Вывести данные о школе и студенте по ID студента')
-get_students(4)
+get_students(204)
