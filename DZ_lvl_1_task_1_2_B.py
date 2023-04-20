@@ -23,3 +23,5 @@ time += my_favorite_songs_dict[num]
 num = str(input())
 time += my_favorite_songs_dict[num]
 print("Три песни звучат ", round(time, 2), " минут")
+
+# Выполнено
