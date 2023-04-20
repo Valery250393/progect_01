@@ -84,4 +84,4 @@ for item in titles:
         item_price = i['price'] * item_quantity
         print(item_name, "- кол-во", item_quantity, "шт. Стоимость", item_price, "руб.")
 
->>>>>>> f916a8d59fab60c24abeacf2d1f29bcdf668f574
+# Отлично
