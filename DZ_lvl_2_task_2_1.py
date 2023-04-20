@@ -68,5 +68,31 @@ lst1 = [4, 6, 2, 1, 9, 63, -134, 566]
 
 res_min = minimum(lst1)
 res_max = maximum(lst1)
->>>>>>> f916a8d59fab60c24abeacf2d1f29bcdf668f574
 print('min =', res_min, 'max =', res_max)
+
+# Супер!)
+# Вот вариант с быстрой сортировкой
+def quicksort(arr):
+    if len(arr) < 2:
+        # базовый случай, массив с 0 или 1 элементом уже отсортирован
+        return arr
+    else:
+        # рекурсивный случай. выберем опорный элемент pivot
+        pivot = arr[0]
+        # подмассив всех элементов, меньших, чем опорный элемент pivot
+        less = [i for i in arr[1:] if i <= pivot]
+        # подмассив всех элементов, превышающих опорный элемент pivot
+        greater = [i for i in arr[1:] if i > pivot]
+        # обединяем в порядке "сортировка для меньшего подмассива – опорный элемент – сортировка для большего подмассив"
+        return quicksort(less) + [pivot] + quicksort(greater)
+
+# Максимум - это последний элемент отсортированного списка
+def maximum(arr):
+    return quicksort(arr)[-1]
+
+ # Минимум - это первый элемент отсортированного списка
+def minimum(arr):
+    return quicksort(arr)[0]
+print('\nБыстрая сортировка')
+print('min =', minimum([4,6,2,1,9,63,-134,566]))
+print('max =', maximum([4,6,2,1,9,63,-134,566]))
