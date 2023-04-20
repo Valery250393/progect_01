@@ -33,4 +33,13 @@ print("Три случайные песни звучат ", datetame.time(time1)
 # Пункт D.
 # Переведите минуты и секунды в формат времени. Используйте модуль datetime 
 
-Тоже что и в C(A)
+# Забыл про время. Вот мой вариант
+from random import sample
+from datetime import timedelta
+from math import modf
+
+time = 0
+for song in sample(tuple(my_favorite_songs_dict), 3):
+    time += my_favorite_songs_dict[song]
+
+print(f'Пункт C(B): Три песни звучат {round(time, 2)}')
