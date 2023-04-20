@@ -27,3 +27,5 @@ number_in_words = [
 ]
 
 print(switch_it_up(number))
+
+# Хорошо
