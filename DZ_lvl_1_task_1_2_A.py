@@ -23,3 +23,5 @@ time += my_favorite_songs[num][1]
 num = int(input())
 time += my_favorite_songs[num][1]
 print("Три песни звучат ", time, " минут")
+
+# Выполнено
