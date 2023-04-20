@@ -86,3 +86,5 @@ def get_students(student_id):
 
 print('\nДомашняя работа. Вывести данные о школе и студенте по ID студента')
 get_students(204)
+
+# Выполнено
