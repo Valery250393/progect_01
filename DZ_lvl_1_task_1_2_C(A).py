@@ -26,3 +26,13 @@ num = randint(0, 8)
 time += my_favorite_songs[num][1]
 print(num)
 print("Три случайные песни звучат ", round(time, 2), " минут")
+
+# Можно все-таки записать это несколько покороче
+# Пункт С(А)
+from random import sample
+
+time = 0
+for song in sample(my_favorite_songs, 3):
+    time += song[1]
+
+print(f'Пункт C(A): Три песни звучат {round(time, 2)}')
